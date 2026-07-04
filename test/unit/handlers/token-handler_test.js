@@ -45,7 +45,7 @@ describe('TokenHandler', function () {
         .catch(should.fail);
     });
 
-    it('should call `model.getClient()` with no secret is provided (public client)', function () {
+    it('should call `model.getClient()` when no client secret is provided (public client)', function () {
       const model = Model.from({
         getClient: sinon.stub().returns({ grants: ['authorization_code'], type: 'public' }),
         saveToken: function () {},
